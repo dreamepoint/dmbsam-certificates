@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DMBSAM Certificate Verification</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+    input { padding: 10px; width: 300px; margin: 5px; }
+    button { padding: 10px 15px; }
+    .result { margin-top: 20px; padding: 15px; border: 1px solid #ccc; display: inline-block; width: 50%; }
+    h1 { color: #0A2A66; }
+  </style>
+</head>
+<body>
+  <h1>DMBSAM Certificate Verification</h1>
+  <p>Enter your Certificate ID:</p>
+  <input type="text" id="certId" placeholder="DMBSAM-INT-2025-001">
+  <button onclick="verifyCert()">Verify</button>
+
+  <div class="result" id="result"></div>
+
+  <script>
