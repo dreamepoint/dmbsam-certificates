@@ -21,3 +21,33 @@
   <div class="result" id="result"></div>
 
   <script>
+    
+    async function verifyCert() {
+      const certId = document.getElementById('certId').value.trim();
+      const resultDiv = document.getElementById('result');
+
+      try {
+        const response = await fetch("https://raw.githubusercontent.com/YOUR_GITHUB_USERNAME/dmbsam-certificates/main/certificates.json");
+        const data = await response.json();
+
+        const cert = data.find(c => c.id === certId);
+        if (cert) {
+          resultDiv.innerHTML = `
+            <h3>✅ Certificate Verified</h3>
+            <p><b>ID:</b> ${cert.id}</p>
+            <p><b>Name:</b> ${cert.name}</p>
+            <p><b>College:</b> ${cert.college}</p>
+            <p><b>Duration:</b> ${cert.duration}</p>
+            <p><b>Issued On:</b> ${cert.issue_date}</p>
+            <p><b>Status:</b> ${cert.status}</p>
+          `;
+        } else {
+          resultDiv.innerHTML = "<h3>❌ Certificate Not Found</h3>";
+        }
+      } catch (error) {
+        resultDiv.innerHTML = "<h3>⚠️ Error loading data. Please try again later.</h3>";
+      }
+    }
+  </script>
+</body>
+</html>
