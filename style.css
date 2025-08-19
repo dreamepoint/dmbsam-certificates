@@ -1,0 +1,136 @@
+/* General Body */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f6ff, #ffffff);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+header {
+  background: #0a2f6b;
+  color: white;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-bottom: 4px solid #d4af37;
+}
+
+header .logo {
+  height: 55px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Container Box */
+.container {
+  flex: 1;
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border-top: 5px solid #0a2f6b;
+  border-bottom: 5px solid #d4af37;
+}
+
+/* Input Box */
+input[type="text"] {
+  padding: 12px;
+  width: 320px;
+  border: 2px solid #0a2f6b;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #d4af37;
+  outline: none;
+}
+
+/* Button */
+button {
+  padding: 12px 20px;
+  background: #0a2f6b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #d4af37;
+  color: #0a2f6b;
+}
+
+/* Result Card */
+.result {
+  margin-top: 30px;
+  padding: 25px;
+  border: 2px solid #0a2f6b;
+  border-radius: 10px;
+  text-align: left;
+  background: #f9fbff;
+}
+
+.result h3 {
+  color: #007b3d;
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #d4af37;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.result p {
+  font-size: 16px;
+  margin: 6px 0;
+}
+
+.result b {
+  color: #0a2f6b;
+}
+
+/* Footer */
+footer {
+  background: #0a2f6b;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: auto;
+  font-size: 14px;
+  border-top: 3px solid #d4af37;
+}
+
+/* Responsive Fixes */
+@media (max-width: 600px) {
+  input[type="text"] {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
