@@ -1,1 +1,35 @@
-
+[
+  {
+    "id": "DMBSAM-INT-2025-001",
+    "name": "Abhishek Kumar",
+    "branch": "Mechanical Engineering",
+    "college": "Polytechnic College Morena (M.P.)",
+    "duration": "3 Weeks",
+    "start_date": "2025-07-28",
+    "end_date": "2025-08-18",
+    "issued_on": "2025-08-18",
+    "status": "Verified"
+  },
+  {
+    "id": "DMBSAM-INT-2025-002",
+    "name": "Abhishek Kushwah",
+    "branch": "Electrical Engineering",
+    "college": "Govt. Polytechnic College Ashoknagar",
+    "duration": "3 Weeks",
+    "start_date": "2025-07-28",
+    "end_date": "2025-08-18",
+    "issued_on": "2025-08-18",
+    "status": "Verified"
+  },
+  {
+    "id": "DMBSAM-INT-2025-003",
+    "name": "Abhishek Marskole",
+    "branch": "Civil Engineering",
+    "college": "Govt. Polytechnic College Balaghat",
+    "duration": "3 Weeks",
+    "start_date": "2025-07-28",
+    "end_date": "2025-08-18",
+    "issued_on": "2025-08-18",
+    "status": "Verified"
+  }
+]
