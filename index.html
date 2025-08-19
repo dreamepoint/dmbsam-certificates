@@ -4,48 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DMBSAM Certificate Verification</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
-    input { padding: 10px; width: 300px; margin: 5px; }
-    button { padding: 10px 15px; }
-    .result { margin-top: 20px; padding: 15px; border: 1px solid #ccc; display: inline-block; width: 50%; }
-    h1 { color: #0A2A66; }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <h1>DMBSAM Certificate Verification</h1>
-  <p>Enter your Certificate ID:</p>
-  <input type="text" id="certId" placeholder="DMBSAM-INT-2025-001">
-  <button onclick="verifyCert()">Verify</button>
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="DMBSAM Logo" class="logo">
+    <h1>DMBSAM Certificate Verification</h1>
+  </header>
 
-  <div class="result" id="result"></div>
+  <!-- Main Container -->
+  <div class="container">
+    <p>Enter your Certificate ID:</p>
+    <input type="text" id="certificateId" placeholder="e.g. DMBSAM-INT-2025-001">
+    <button onclick="verifyCertificate()">Verify</button>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Powered by <b>Dream Merchant Business Solution and Marketing (DMBSAM)</b></p>
+    <p>www.dreamepoint.com</p>
+  </footer>
 
   <script>
-    
-    async function verifyCert() {
-      const certId = document.getElementById('certId').value.trim();
-      const resultDiv = document.getElementById('result');
+    async function verifyCertificate() {
+      const certId = document.getElementById("certificateId").value.trim();
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = "⏳ Verifying...";
 
       try {
-        const response = await fetch("https://raw.githubusercontent.com/dreamepoint/dmbsam-certificates/main/certificates.json");
-        const data = await response.json();
+        const response = await fetch("certificates.json");
+        const certificates = await response.json();
 
-        const cert = data.find(c => c.id === certId);
+        const cert = certificates.find(c => c.id === certId);
+
         if (cert) {
           resultDiv.innerHTML = `
-            <h3>✅ Certificate Verified</h3>
+            <h3>✔ Certificate Verified</h3>
             <p><b>ID:</b> ${cert.id}</p>
             <p><b>Name:</b> ${cert.name}</p>
             <p><b>College:</b> ${cert.college}</p>
             <p><b>Duration:</b> ${cert.duration}</p>
             <p><b>Issued On:</b> ${cert.issuedOn}</p>
-            <p><b>Status:</b> ${cert.status}</p>
+            <p><b>Status:</b> Verified</p>
           `;
         } else {
-          resultDiv.innerHTML = "<h3>❌ Certificate Not Found</h3>";
+          resultDiv.innerHTML = `<p style="color:red;"><b>❌ Certificate Not Found!</b></p>`;
         }
       } catch (error) {
-        resultDiv.innerHTML = "<h3>⚠️ Error loading data. Please try again later.</h3>";
+        resultDiv.innerHTML = `<p style="color:red;">⚠ Error loading data. Please try again later.</p>`;
       }
     }
   </script>
